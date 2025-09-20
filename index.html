@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vCISO-EU | Virtual CISO Office for Europe | Advanced Cybersecurity Solutions</title>
+    <meta name="description" content="Advanced Virtual CISO services for European enterprises. Professional cybersecurity leadership: DORA, ISO 27001, PCI DSS, GDPR compliance.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background: #0a0f1c;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #0a0f1c 0%, #1a2332 50%, #0f1419 100%);
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(0, 191, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 0, 150, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(0, 255, 135, 0.05) 0%, transparent 50%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        /* Header */
+        .header {
+            background: rgba(10, 15, 28, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 191, 255, 0.2);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #00bfff 0%, #ff0096 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: #00bfff;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00bfff, #ff0096);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #00bfff 50%, #ff0096 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.3rem;
+            color: #a0aec0;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00bfff 0%, #0080ff 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(0, 191, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #00bfff;
+            padding: 15px 30px;
+            border: 2px solid #00bfff;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-secondary:hover {
+            background: #00bfff;
+            color: #0a0f1c;
+        }
+
+        /* Hero Visual */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .shield-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+
+        .shield {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .shield-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 216px;
+            height: 216px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0 0 20px rgba(0, 191, 255, 0.6));
+            animation: shield-float 3s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        .shield-logo svg {
+            width: 100%;
+            height: 100%;
+            animation: logo-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes shield-float {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1) rotate(0deg);
+            }
+            50% {
+                transform: translate(-50%, -55%) scale(1.03) rotate(1deg);
+            }
+        }
+
+        @keyframes logo-glow {
+            0% {
+                filter: drop-shadow(0 0 15px rgba(0, 191, 255, 0.5));
+            }
+            100% {
+                filter: drop-shadow(0 0 25px rgba(0, 191, 255, 0.8)) drop-shadow(0 0 35px rgba(0, 128, 255, 0.4));
+            }
+        }
+
+        .orbit {
+            position: absolute;
+            border: 1px solid rgba(0, 191, 255, 0.3);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+        }
+
+        .orbit-1 { width: 120%; height: 120%; }
+        .orbit-2 { width: 140%; height: 140%; animation-duration: 30s; }
+        .orbit-3 { width: 160%; height: 160%; animation-duration: 40s; }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 100px 0;
+            background: rgba(0, 191, 255, 0.05);
+            border-top: 1px solid rgba(0, 191, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 191, 255, 0.2);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 191, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            background: rgba(0, 191, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 191, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #00bfff 0%, #ff0096 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .stat-label {
+            color: #a0aec0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #00bfff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #a0aec0;
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 191, 255, 0.2);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.1), transparent);
+            transition: all 0.5s;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #00bfff;
+            box-shadow: 0 20px 40px rgba(0, 191, 255, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #00bfff;
+            text-shadow: 0 0 20px rgba(0, 191, 255, 0.6), 0 0 40px rgba(0, 191, 255, 0.4);
+            filter: drop-shadow(0 0 10px rgba(0, 191, 255, 0.5));
+            animation: icon-pulse 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes icon-pulse {
+            0% {
+                text-shadow: 0 0 20px rgba(0, 191, 255, 0.6);
+                transform: scale(1);
+            }
+            100% {
+                text-shadow: 0 0 30px rgba(0, 191, 255, 0.8), 0 0 50px rgba(0, 191, 255, 0.6);
+                transform: scale(1.05);
+            }
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .service-card .compliance-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #00bfff 0%, #ff0096 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .service-card p {
+            color: #a0aec0;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            color: #a0aec0;
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00bfff;
+            font-weight: bold;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background: rgba(255, 0, 150, 0.03);
+            border-top: 1px solid rgba(255, 0, 150, 0.2);
+            border-bottom: 1px solid rgba(255, 0, 150, 0.2);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 992px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid rgba(0, 191, 255, 0.2);
+            border-radius: 25px;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00bfff, #ff0096);
+        }
+
+        .pricing-card.popular {
+            transform: scale(1.05);
+            border-color: #ff0096;
+            background: rgba(255, 0, 150, 0.05);
+        }
+
+        .pricing-card.popular::after {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: linear-gradient(135deg, #ff0096, #ff4081);
+            color: white;
+            padding: 8px 40px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transform: rotate(45deg);
+            letter-spacing: 1px;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: #00bfff;
+            box-shadow: 0 20px 50px rgba(0, 191, 255, 0.3);
+        }
+
+        .plan-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .plan-price {
+            font-size: 3.5rem;
+            font-weight: 300;
+            background: linear-gradient(135deg, #00bfff 0%, #ff0096 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-period {
+            color: #a0aec0;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .plan-features li {
+            color: #a0aec0;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .plan-features li::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            color: #00bfff;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.1) 0%, rgba(255, 0, 150, 0.1) 100%);
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 191, 255, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-top: 3rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #a0aec0;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 191, 255, 0.3);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #00bfff;
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #00bfff 0%, #ff0096 100%);
+            color: white;
+            padding: 18px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(0, 191, 255, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: #0a0f1c;
+            border-top: 1px solid rgba(0, 191, 255, 0.2);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer p {
+            color: #a0aec0;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .pricing-card.popular {
+                transform: none;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .shield-container {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        /* Particle Effects */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #00bfff;
+            border-radius: 50%;
+            animation: float-particle 10s infinite linear;
+            opacity: 0.7;
+        }
+
+        .particle:nth-child(2n) { background: #ff0096; }
+        .particle:nth-child(3n) { background: #00ff87; }
+
+        @keyframes float-particle {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo" style="display: flex; align-items: center; gap: 15px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="50" height="60" style="filter: drop-shadow(0 0 10px rgba(0,191,255,0.5));">
+                    <defs>
+                        <linearGradient id="headerShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#00bfff;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#0099ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#6644ff;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Shield Shape exactly like hero logo -->
+                    <path d="M200 40 L340 90 L340 220 Q340 320 200 420 Q60 320 60 220 L60 90 Z" 
+                          fill="none" stroke="url(#headerShieldGrad)" stroke-width="12"/>
+                    
+                    <!-- 8 EU Stars positioned exactly like hero logo -->
+                    <g fill="url(#headerShieldGrad)">
+                        <!-- Top star (12 o'clock) -->
+                        <polygon points="200,165 202,171 208,171 204.5,174.5 206,180.5 200,177 194,180.5 195.5,174.5 192,171 198,171" />
+                        
+                        <!-- Upper right star (1:30) -->
+                        <polygon points="235,180 237,186 243,186 239.5,189.5 241,195.5 235,192 229,195.5 230.5,189.5 227,186 233,186" />
+                        
+                        <!-- Right star (3 o'clock) -->
+                        <polygon points="255,220 257,226 263,226 259.5,229.5 261,235.5 255,232 249,235.5 250.5,229.5 247,226 253,226" />
+                        
+                        <!-- Lower right star (4:30) -->
+                        <polygon points="235,260 237,266 243,266 239.5,269.5 241,275.5 235,272 229,275.5 230.5,269.5 227,266 233,266" />
+                        
+                        <!-- Bottom star (6 o'clock) -->
+                        <polygon points="200,275 202,281 208,281 204.5,284.5 206,290.5 200,287 194,290.5 195.5,284.5 192,281 198,281" />
+                        
+                        <!-- Lower left star (7:30) -->
+                        <polygon points="165,260 167,266 173,266 169.5,269.5 171,275.5 165,272 159,275.5 160.5,269.5 157,266 163,266" />
+                        
+                        <!-- Left star (9 o'clock) -->
+                        <polygon points="145,220 147,226 153,226 149.5,229.5 151,235.5 145,232 139,235.5 140.5,229.5 137,226 143,226" />
+                        
+                        <!-- Upper left star (10:30) -->
+                        <polygon points="165,180 167,186 173,186 169.5,189.5 171,195.5 165,192 159,195.5 160.5,189.5 157,186 163,186" />
+                    </g>
+                    
+                    <!-- Central Keyhole exactly like hero logo -->
+                    <g fill="url(#headerShieldGrad)">
+                        <circle cx="200" cy="220" r="15" />
+                        <rect x="190" y="230" width="20" height="25" rx="3" />
+                        <circle cx="200" cy="220" r="6" fill="transparent" stroke="#ffffff" stroke-width="2" />
+                    </g>
+                </svg><div style="display: flex; flex-direction: column; align-items: flex-start;">
+                    <span style="background: linear-gradient(135deg, #00bfff 0%, #ff0096 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 1.8rem; font-weight: bold; line-height: 1.2;">vCISO</span>
+                    <span style="background: linear-gradient(135deg, #00bfff 0%, #ff0096 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 0.9rem; font-weight: 500; line-height: 1.1; opacity: 0.9;">Virtual CISO Office for EU</span>
+                </div></div>
+            <ul class="nav-links">
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#pricing">PRICING</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Language Switcher -->
+    <div class="lang-switcher" style="position: fixed; top: 80px; right: 20px; z-index: 1001; background: rgba(0, 191, 255, 0.1); border: 1px solid rgba(0, 191, 255, 0.3); border-radius: 25px; padding: 10px; backdrop-filter: blur(10px);"><a href="index.html" style="color: #00bfff; text-decoration: none; padding: 8px 15px; border-radius: 20px; transition: all 0.3s; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; background: linear-gradient(135deg, #00bfff, #ff0096); color: white;">EN</a><a href="index-ru.html" style="color: #00bfff; text-decoration: none; padding: 8px 15px; border-radius: 20px; transition: all 0.3s; font-weight: 600; text-transform: uppercase; font-size: 0.9rem;">RU</a></div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="particles">
+            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+            <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
+            <div class="particle" style="left: 60%; animation-delay: 1s;"></div>
+            <div class="particle" style="left: 70%; animation-delay: 3s;"></div>
+            <div class="particle" style="left: 80%; animation-delay: 5s;"></div>
+            <div class="particle" style="left: 90%; animation-delay: 7s;"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>We're The Best Virtual CISO Team For Europe</h1>
+                    <p class="subtitle">
+                        Advanced cybersecurity leadership solutions for European enterprises. Complete DORA, ISO 27001, PCI DSS, and GDPR compliance with 24/7 security operations.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn-primary">Get A Quote</a>
+                        <a href="#services" class="btn-secondary">Our Services</a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="shield-container">
+                        <div class="shield">
+                            <div class="orbit orbit-1"></div>
+                            <div class="orbit orbit-2"></div>
+                            <div class="orbit orbit-3"></div>
+                            <div class="shield-logo">
+                                <svg width="216" height="216" viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="newShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#00bfff;stop-opacity:1" />
+                                            <stop offset="50%" style="stop-color:#0099ff;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#6644ff;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    
+                                    <!-- Shield Shape exactly like the logo -->
+                                    <path d="M200 40 L340 90 L340 220 Q340 320 200 420 Q60 320 60 220 L60 90 Z" 
+                                          fill="none" stroke="url(#newShieldGrad)" stroke-width="12"/>
+                                    
+                                    <!-- 8 EU Stars positioned exactly like reference image -->
+                                    <g fill="url(#newShieldGrad)">
+                                        <!-- Top star (12 o'clock) -->
+                                        <polygon points="200,165 202,171 208,171 204.5,174.5 206,180.5 200,177 194,180.5 195.5,174.5 192,171 198,171" />
+                                        
+                                        <!-- Upper right star (1:30) -->
+                                        <polygon points="235,180 237,186 243,186 239.5,189.5 241,195.5 235,192 229,195.5 230.5,189.5 227,186 233,186" />
+                                        
+                                        <!-- Right star (3 o'clock) -->
+                                        <polygon points="255,220 257,226 263,226 259.5,229.5 261,235.5 255,232 249,235.5 250.5,229.5 247,226 253,226" />
+                                        
+                                        <!-- Lower right star (4:30) -->
+                                        <polygon points="235,260 237,266 243,266 239.5,269.5 241,275.5 235,272 229,275.5 230.5,269.5 227,266 233,266" />
+                                        
+                                        <!-- Bottom star (6 o'clock) -->
+                                        <polygon points="200,275 202,281 208,281 204.5,284.5 206,290.5 200,287 194,290.5 195.5,284.5 192,281 198,281" />
+                                        
+                                        <!-- Lower left star (7:30) -->
+                                        <polygon points="165,260 167,266 173,266 169.5,269.5 171,275.5 165,272 159,275.5 160.5,269.5 157,266 163,266" />
+                                        
+                                        <!-- Left star (9 o'clock) -->
+                                        <polygon points="145,220 147,226 153,226 149.5,229.5 151,235.5 145,232 139,235.5 140.5,229.5 137,226 143,226" />
+                                        
+                                        <!-- Upper left star (10:30) -->
+                                        <polygon points="165,180 167,186 173,186 169.5,189.5 171,195.5 165,192 159,195.5 160.5,189.5 157,186 163,186" />
+                                    </g>
+                                    
+                                    <!-- Central Keyhole (exactly like logo) -->
+                                    <g fill="url(#newShieldGrad)">
+                                        <circle cx="200" cy="220" r="15" />
+                                        <rect x="190" y="230" width="20" height="25" rx="3" />
+                                        <circle cx="200" cy="220" r="6" fill="transparent" stroke="#ffffff" stroke-width="2" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">250+</div>
+                    <div class="stat-label">Enterprise Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Security Uptime</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">SOC Monitoring</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">€5M+</div>
+                    <div class="stat-label">Cost Savings</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">What We Do For Your Cyber Security Solutions</h2>
+            <p class="section-subtitle">
+                Comprehensive virtual CISO services powered by advanced security frameworks and regulatory expertise
+            </p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="doraBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#003399;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#0066cc;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Blue background circle -->
+                            <circle cx="50" cy="50" r="48" fill="url(#doraBlue)" stroke="#ffcc00" stroke-width="2"/>
+                            
+                            <!-- 12 EU Stars in perfect circle -->
+                            <g fill="#ffcc00">
+                                <!-- Star 1: 12 o'clock (top) -->
+                                <polygon points="50,18 51.5,22 55.5,22 52.25,24.5 53.75,28.5 50,26 46.25,28.5 47.75,24.5 44.5,22 48.5,22" />
+                                <!-- Star 2: 1 o'clock -->
+                                <polygon points="63,22 64.5,26 68.5,26 65.25,28.5 66.75,32.5 63,30 59.25,32.5 60.75,28.5 57.5,26 61.5,26" />
+                                <!-- Star 3: 2 o'clock -->
+                                <polygon points="72,32 73.5,36 77.5,36 74.25,38.5 75.75,42.5 72,40 68.25,42.5 69.75,38.5 66.5,36 70.5,36" />
+                                <!-- Star 4: 3 o'clock (right) -->
+                                <polygon points="78,50 79.5,54 83.5,54 80.25,56.5 81.75,60.5 78,58 74.25,60.5 75.75,56.5 72.5,54 76.5,54" />
+                                <!-- Star 5: 4 o'clock -->
+                                <polygon points="72,68 73.5,72 77.5,72 74.25,74.5 75.75,78.5 72,76 68.25,78.5 69.75,74.5 66.5,72 70.5,72" />
+                                <!-- Star 6: 5 o'clock -->
+                                <polygon points="63,78 64.5,82 68.5,82 65.25,84.5 66.75,88.5 63,86 59.25,88.5 60.75,84.5 57.5,82 61.5,82" />
+                                <!-- Star 7: 6 o'clock (bottom) -->
+                                <polygon points="50,82 51.5,86 55.5,86 52.25,88.5 53.75,92.5 50,90 46.25,92.5 47.75,88.5 44.5,86 48.5,86" />
+                                <!-- Star 8: 7 o'clock -->
+                                <polygon points="37,78 38.5,82 42.5,82 39.25,84.5 40.75,88.5 37,86 33.25,88.5 34.75,84.5 31.5,82 35.5,82" />
+                                <!-- Star 9: 8 o'clock -->
+                                <polygon points="28,68 29.5,72 33.5,72 30.25,74.5 31.75,78.5 28,76 24.25,78.5 25.75,74.5 22.5,72 26.5,72" />
+                                <!-- Star 10: 9 o'clock (left) -->
+                                <polygon points="22,50 23.5,54 27.5,54 24.25,56.5 25.75,60.5 22,58 18.25,60.5 19.75,56.5 16.5,54 20.5,54" />
+                                <!-- Star 11: 10 o'clock -->
+                                <polygon points="28,32 29.5,36 33.5,36 30.25,38.5 31.75,42.5 28,40 24.25,42.5 25.75,38.5 22.5,36 26.5,36" />
+                                <!-- Star 12: 11 o'clock -->
+                                <polygon points="37,22 38.5,26 42.5,26 39.25,28.5 40.75,32.5 37,30 33.25,32.5 34.75,28.5 31.5,26 35.5,26" />
+                            </g>
+                            
+                            <!-- DORA text -->
+                            <text x="50" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffcc00">DORA</text>
+                        </svg>
+                    </div>
+                    <div class="compliance-tag">EU Regulation</div>
+                    <h3>DORA Compliance</h3>
+                    <p>Complete Digital Operational Resilience Act implementation for financial institutions with advanced ICT risk management.</p>
+                    <ul class="service-features">
+                        <li>ICT governance framework</li>
+                        <li>Operational resilience testing</li>
+                        <li>Incident response automation</li>
+                        <li>Third-party risk management</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="isoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#0066cc;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#003399;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <!-- ISO background -->
+                            <rect x="5" y="5" width="90" height="90" rx="10" fill="url(#isoGradient)" stroke="#ffffff" stroke-width="2"/>
+                            
+                            <!-- ISO text -->
+                            <text x="50" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">ISO</text>
+                            <text x="50" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">27001</text>
+                            
+                            <!-- Security shield icon -->
+                            <path d="M 35 65 Q 35 60 50 60 Q 65 60 65 65 L 65 75 Q 65 85 50 85 Q 35 85 35 75 Z" fill="#ffffff" stroke="#0066cc" stroke-width="1"/>
+                            <circle cx="50" cy="70" r="3" fill="#0066cc"/>
+                            <rect x="48" y="73" width="4" height="6" fill="#0066cc"/>
+                        </svg>
+                    </div>
+                    <div class="compliance-tag">ISO Certification</div>
+                    <h3>ISO 27001 Management</h3>
+                    <p>End-to-end Information Security Management System implementation with certification support and continuous monitoring.</p>
+                    <ul class="service-features">
+                        <li>ISMS design and implementation</li>
+                        <li>Risk assessment protocols</li>
+                        <li>Security controls deployment</li>
+                        <li>Audit preparation and management</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="pciGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#cc0000;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#990000;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <!-- PCI background -->
+                            <rect x="5" y="5" width="90" height="90" rx="15" fill="url(#pciGradient)" stroke="#ffffff" stroke-width="2"/>
+                            
+                            <!-- PCI text -->
+                            <text x="50" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">PCI</text>
+                            <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">DSS</text>
+                            
+                            <!-- Credit card icon -->
+                            <rect x="20" y="55" width="60" height="35" rx="5" fill="#ffffff" stroke="#cc0000" stroke-width="1"/>
+                            <rect x="25" y="60" width="50" height="6" fill="#cc0000"/>
+                            <rect x="25" y="70" width="20" height="3" fill="#cc0000"/>
+                            <rect x="25" y="75" width="30" height="3" fill="#cc0000"/>
+                            <rect x="25" y="80" width="25" height="3" fill="#cc0000"/>
+                            
+                            <!-- Security lock -->
+                            <circle cx="70" cy="75" r="6" fill="#cc0000"/>
+                            <rect x="67" y="72" width="6" height="3" fill="#ffffff"/>
+                            <circle cx="70" cy="75" r="1.5" fill="#ffffff"/>
+                        </svg>
+                    </div>
+                    <div class="compliance-tag">Payment Security</div>
+                    <h3>PCI DSS Protection</h3>
+                    <p>Advanced payment card industry compliance with automated monitoring and quarterly assessment management.</p>
+                    <ul class="service-features">
+                        <li>CDE segmentation and protection</li>
+                        <li>Vulnerability scanning automation</li>
+                        <li>Penetration testing coordination</li>
+                        <li>Compliance reporting and validation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="gdprGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#003399;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#0066cc;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <!-- GDPR background (EU blue) -->
+                            <rect x="5" y="5" width="90" height="90" rx="10" fill="url(#gdprGradient)" stroke="#ffcc00" stroke-width="2"/>
+                            
+                            <!-- GDPR text -->
+                            <text x="50" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffcc00">GDPR</text>
+                            
+                            <!-- Privacy shield with EU stars -->
+                            <path d="M 30 35 Q 30 30 50 30 Q 70 30 70 35 L 70 65 Q 70 80 50 80 Q 30 80 30 65 Z" fill="#ffcc00" stroke="#003399" stroke-width="2"/>
+                            
+                            <!-- EU stars inside shield (simplified - 4 key stars) -->
+                            <polygon points="50,40 51,43 54,43 52,45 53,48 50,46 47,48 48,45 46,43 49,43" fill="#003399"/>
+                            <polygon points="42,50 43,53 46,53 44,55 45,58 42,56 39,58 40,55 38,53 41,53" fill="#003399"/>
+                            <polygon points="58,50 59,53 62,53 60,55 61,58 58,56 55,58 56,55 54,53 57,53" fill="#003399"/>
+                            <polygon points="50,60 51,63 54,63 52,65 53,68 50,66 47,68 48,65 46,63 49,63" fill="#003399"/>
+                            
+                            <!-- Privacy lock -->
+                            <rect x="46" y="50" width="8" height="8" rx="1" fill="#003399"/>
+                            <circle cx="50" cy="52" r="1.5" fill="#ffcc00"/>
+                        </svg>
+                    </div>
+                    <div class="compliance-tag">Data Protection</div>
+                    <h3>GDPR Privacy Shield</h3>
+                    <p>Comprehensive data protection governance with privacy by design implementation and breach response automation.</p>
+                    <ul class="service-features">
+                        <li>Data Protection Impact Assessments</li>
+                        <li>Privacy by design architecture</li>
+                        <li>Automated breach detection</li>
+                        <li>Regulatory liaison and reporting</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🚨</div>
+                    <div class="compliance-tag">24/7 Operations</div>
+                    <h3>Advanced SOC Services</h3>
+                    <p>Enterprise Security Operations Center with AI-powered threat detection and automated incident response capabilities.</p>
+                    <ul class="service-features">
+                        <li>Real-time threat monitoring</li>
+                        <li>AI-powered threat hunting</li>
+                        <li>Automated incident response</li>
+                        <li>Digital forensics and analysis</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <div class="compliance-tag">Strategic Advisory</div>
+                    <h3>Executive Security Leadership</h3>
+                    <p>C-level cybersecurity strategy and governance with board-ready reporting and risk management frameworks.</p>
+                    <ul class="service-features">
+                        <li>Strategic security planning</li>
+                        <li>Board-level risk reporting</li>
+                        <li>Security architecture design</li>
+                        <li>Executive security training</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Our Best Pricing Plan For Your Solution</h2>
+            <p class="section-subtitle">
+                Flexible pricing models designed for enterprise cybersecurity leadership requirements
+            </p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Executive</div>
+                    <div class="plan-price">€5K</div>
+                    <div class="plan-period">/month</div>
+                    <ul class="plan-features">
+                        <li>Strategic cybersecurity oversight</li>
+                        <li>Quarterly compliance reviews</li>
+                        <li>Executive risk reporting</li>
+                        <li>Policy framework development</li>
+                        <li>Vendor risk assessments</li>
+                        <li>Monthly strategy sessions</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Get Started</a>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="plan-name">Enterprise</div>
+                    <div class="plan-price">€12K</div>
+                    <div class="plan-period">/month</div>
+                    <ul class="plan-features">
+                        <li>Full virtual CISO team</li>
+                        <li>24/7 SOC monitoring</li>
+                        <li>DORA/ISO implementation</li>
+                        <li>Advanced threat hunting</li>
+                        <li>Incident response automation</li>
+                        <li>Board-level governance</li>
+                        <li>Continuous compliance</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Most Popular</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="plan-name">Premium</div>
+                    <div class="plan-price">€25K+</div>
+                    <div class="plan-period">/month</div>
+                    <ul class="plan-features">
+                        <li>Complete CISO office</li>
+                        <li>Multi-framework compliance</li>
+                        <li>Custom security architecture</li>
+                        <li>M&A due diligence</li>
+                        <li>Global regulatory coordination</li>
+                        <li>White-glove support</li>
+                        <li>Dedicated success manager</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">Ready To Secure Your Enterprise?</h2>
+                <p class="section-subtitle">
+                    Get advanced cybersecurity leadership and start your compliance journey today
+                </p>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company Name *</label>
+                                <input type="text" id="company" name="company" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Your Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="industry">Industry</label>
+                                <select id="industry" name="industry">
+                                    <option value="">Select Industry</option>
+                                    <option value="fintech">FinTech & Banking</option>
+                                    <option value="saas">SaaS & Technology</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="ecommerce">E-commerce</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="compliance">Primary Need</label>
+                                <select id="compliance" name="compliance">
+                                    <option value="">Select Compliance Need</option>
+                                    <option value="dora">DORA Compliance</option>
+                                    <option value="iso27001">ISO 27001</option>
+                                    <option value="pci">PCI DSS</option>
+                                    <option value="gdpr">GDPR</option>
+                                    <option value="soc">24/7 SOC</option>
+                                    <option value="strategy">Security Strategy</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Requirements</label>
+                            <textarea id="message" name="message" placeholder="Describe your cybersecurity challenges and timeline..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Get Free Consultation</button>
+                    </form>
+                </div>
+                
+                <div style="margin-top: 3rem; color: #a0aec0;">
+                    <p>🔒 secure@vciso-eu.com | 📞 +32 (0) 2 800 9000</p>
+                    <p>🏢 Brussels Cyber District | Protecting Europe's Digital Future</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 vCISO-EU. Advanced Virtual CISO Services for Europe.</p>
+            <p>Cybersecurity Leadership | DORA, ISO 27001, PCI DSS, GDPR | 24/7 SOC Operations</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(10, 15, 28, 0.98)';
+            } else {
+                header.style.background = 'rgba(10, 15, 28, 0.95)';
+            }
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('🚀 Thank you! Our cybersecurity experts will contact you within 24 hours to discuss your enterprise security requirements.');
+        });
+
+        // Dynamic particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 10 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 5) + 's';
+            document.querySelector('.particles').appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 15000);
+        }
+
+        // Generate particles periodically
+        setInterval(createParticle, 2000);
+    </script>
+</body>
+</html>

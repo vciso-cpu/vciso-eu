@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00bfff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff0096;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00bfff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff0096;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Shield Background -->
+  <path d="M200 50 L320 100 L320 200 Q320 300 200 350 Q80 300 80 200 L80 100 Z" 
+        fill="none" 
+        stroke="url(#shieldGradient)" 
+        stroke-width="3"/>
+  
+  <!-- EU Stars -->
+  <g fill="#00bfff">
+    <!-- Top star -->
+    <polygon points="200,80 204,92 216,92 207,100 211,112 200,105 189,112 193,100 184,92 196,92" />
+    <!-- Right stars -->
+    <polygon points="280,120 284,132 296,132 287,140 291,152 280,145 269,152 273,140 264,132 276,132" />
+    <polygon points="295,180 299,192 311,192 302,200 306,212 295,205 284,212 288,200 279,192 291,192" />
+    <polygon points="280,240 284,252 296,252 287,260 291,272 280,265 269,272 273,260 264,252 276,252" />
+    <!-- Bottom stars -->
+    <polygon points="240,290 244,302 256,302 247,310 251,322 240,315 229,322 233,310 224,302 236,302" />
+    <polygon points="160,290 164,302 176,302 167,310 171,322 160,315 149,322 153,310 144,302 156,302" />
+    <!-- Left stars -->
+    <polygon points="120,240 124,252 136,252 127,260 131,272 120,265 109,272 113,260 104,252 116,252" />
+    <polygon points="105,180 109,192 121,192 112,200 116,212 105,205 94,212 98,200 89,192 101,192" />
+    <polygon points="120,120 124,132 136,132 127,140 131,152 120,145 109,152 113,140 104,132 116,132" />
+    <!-- Side stars -->
+    <polygon points="160,110 164,122 176,122 167,130 171,142 160,135 149,142 153,130 144,122 156,122" />
+    <polygon points="240,110 244,122 256,122 247,130 251,142 240,135 229,142 233,130 224,122 236,122" />
+    <polygon points="160,270 164,282 176,282 167,290 171,302 160,295 149,302 153,290 144,282 156,282" />
+    <polygon points="240,270 244,282 256,282 247,290 251,302 240,295 229,302 233,290 224,282 236,282" />
+  </g>
+  
+  <!-- Keyhole -->
+  <g fill="#00bfff">
+    <!-- Keyhole circle -->
+    <circle cx="200" cy="180" r="25" />
+    <!-- Keyhole slot -->
+    <rect x="190" y="195" width="20" height="40" rx="2" />
+  </g>
+  
+  <!-- vCISO Text -->
+  <text x="200" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white">vCISO</text>
+  
+  <!-- EUROPE Text -->
+  <text x="200" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="url(#textGradient)">EUROPE</text>
+</svg>

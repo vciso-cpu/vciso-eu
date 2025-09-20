@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vCISO-EU | Virtual CISO Office for Europe | Advanced Cybersecurity Solutions</title>
-    <meta name="description" content="Advanced Virtual CISO services for European enterprises. Professional cybersecurity leadership: DORA, ISO 27001, PCI DSS, GDPR compliance.">
+    <title>vCISO-EU | Виртуальный CISO Офис для Европы | Продвинутые решения кибербезопасности</title>
+    <meta name="description" content="Продвинутые услуги виртуального CISO для европейских предприятий. Профессиональное руководство кибербезопасностью: DORA, ISO 27001, PCI DSS, GDPR.">
     
     <style>
         * {
@@ -29,6 +29,40 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            z-index: 1001;
+            background: rgba(0, 191, 255, 0.1);
+            border: 1px solid rgba(0, 191, 255, 0.3);
+            border-radius: 25px;
+            padding: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-switcher a {
+            color: #00bfff;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .lang-switcher a:hover {
+            background: #00bfff;
+            color: #0a0f1c;
+        }
+
+        .lang-switcher a.active {
+            background: linear-gradient(135deg, #00bfff, #ff0096);
+            color: white;
         }
 
         /* Animated Background */
@@ -268,6 +302,7 @@
                 filter: drop-shadow(0 0 25px rgba(0, 191, 255, 0.8)) drop-shadow(0 0 35px rgba(0, 128, 255, 0.4));
             }
         }
+
 
         .orbit {
             position: absolute;
@@ -836,7 +871,7 @@
         }
 
         .pricing-card.popular::after {
-            content: 'MOST POPULAR';
+            content: 'ПОПУЛЯРНЫЙ';
             position: absolute;
             top: 20px;
             right: -30px;
@@ -1073,12 +1108,18 @@
     <!-- Animated Background -->
     <div class="bg-animation"></div>
 
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <a href="index.html">EN</a>
+        <a href="index-ru.html" class="active">RU</a>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <nav class="nav container">
             <div class="logo" style="display: flex; align-items: center; gap: 15px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="50" height="60" style="filter: drop-shadow(0 0 10px rgba(0,191,255,0.5));">
                     <defs>
-                        <linearGradient id="headerShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <linearGradient id="headerShieldGradRu" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" style="stop-color:#00bfff;stop-opacity:1" />
                             <stop offset="50%" style="stop-color:#0099ff;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#6644ff;stop-opacity:1" />
@@ -1087,10 +1128,10 @@
                     
                     <!-- Shield Shape exactly like hero logo -->
                     <path d="M200 40 L340 90 L340 220 Q340 320 200 420 Q60 320 60 220 L60 90 Z" 
-                          fill="none" stroke="url(#headerShieldGrad)" stroke-width="12"/>
+                          fill="none" stroke="url(#headerShieldGradRu)" stroke-width="12"/>
                     
                     <!-- 8 EU Stars positioned exactly like hero logo -->
-                    <g fill="url(#headerShieldGrad)">
+                    <g fill="url(#headerShieldGradRu)">
                         <!-- Top star (12 o'clock) -->
                         <polygon points="200,165 202,171 208,171 204.5,174.5 206,180.5 200,177 194,180.5 195.5,174.5 192,171 198,171" />
                         
@@ -1117,26 +1158,25 @@
                     </g>
                     
                     <!-- Central Keyhole exactly like hero logo -->
-                    <g fill="url(#headerShieldGrad)">
+                    <g fill="url(#headerShieldGradRu)">
                         <circle cx="200" cy="220" r="15" />
                         <rect x="190" y="230" width="20" height="25" rx="3" />
                         <circle cx="200" cy="220" r="6" fill="transparent" stroke="#ffffff" stroke-width="2" />
                     </g>
                 </svg><div style="display: flex; flex-direction: column; align-items: flex-start;">
                     <span style="background: linear-gradient(135deg, #00bfff 0%, #ff0096 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 1.8rem; font-weight: bold; line-height: 1.2;">vCISO</span>
-                    <span style="background: linear-gradient(135deg, #00bfff 0%, #ff0096 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 0.9rem; font-weight: 500; line-height: 1.1; opacity: 0.9;">Virtual CISO Office for EU</span>
+                    <span style="background: linear-gradient(135deg, #00bfff 0%, #ff0096 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 0.9rem; font-weight: 500; line-height: 1.1; opacity: 0.9;">Виртуальный CISO Офис для ЕС</span>
                 </div></div>
             <ul class="nav-links">
-                <li><a href="#about">ABOUT US</a></li>
-                <li><a href="#services">SERVICES</a></li>
-                <li><a href="#pricing">PRICING</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-                <li><a href="index-ru.html" class="lang-switch">RU</a></li>
+                <li><a href="#about">О НАС</a></li>
+                <li><a href="#services">УСЛУГИ</a></li>
+                <li><a href="#pricing">ТАРИФЫ</a></li>
+                <li><a href="#contact">КОНТАКТЫ</a></li>
+                <li><a href="index.html" class="lang-switch">EN</a></li>
             </ul>
         </nav>
     </header>
-    <!-- Language Switcher -->
-    <div class="lang-switcher" style="position: fixed; top: 80px; right: 20px; z-index: 1001; background: rgba(0, 191, 255, 0.1); border: 1px solid rgba(0, 191, 255, 0.3); border-radius: 25px; padding: 10px; backdrop-filter: blur(10px);"><a href="index.html" style="color: #00bfff; text-decoration: none; padding: 8px 15px; border-radius: 20px; transition: all 0.3s; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; background: linear-gradient(135deg, #00bfff, #ff0096); color: white;">EN</a><a href="index-ru.html" style="color: #00bfff; text-decoration: none; padding: 8px 15px; border-radius: 20px; transition: all 0.3s; font-weight: 600; text-transform: uppercase; font-size: 0.9rem;">RU</a></div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="particles">
@@ -1154,13 +1194,13 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>We're The Best Virtual CISO Team For Europe</h1>
+                    <h1>Лучшая Команда Виртуальных CISO для Европы</h1>
                     <p class="subtitle">
-                        Advanced cybersecurity leadership solutions for European enterprises. Complete DORA, ISO 27001, PCI DSS, and GDPR compliance with 24/7 security operations.
+                        Продвинутые решения кибербезопасности для европейских предприятий. Полное соответствие DORA, ISO 27001, PCI DSS и GDPR с круглосуточным мониторингом безопасности.
                     </p>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn-primary">Get A Quote</a>
-                        <a href="#services" class="btn-secondary">Our Services</a>
+                        <a href="#contact" class="btn-primary">Получить Предложение</a>
+                        <a href="#services" class="btn-secondary">Наши Услуги</a>
                     </div>
                 </div>
                 
@@ -1173,7 +1213,7 @@
                             <div class="shield-logo">
                                 <svg width="216" height="216" viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg">
                                     <defs>
-                                        <linearGradient id="newShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <linearGradient id="newShieldGradRu" x1="0%" y1="0%" x2="100%" y2="100%">
                                             <stop offset="0%" style="stop-color:#00bfff;stop-opacity:1" />
                                             <stop offset="50%" style="stop-color:#0099ff;stop-opacity:1" />
                                             <stop offset="100%" style="stop-color:#6644ff;stop-opacity:1" />
@@ -1182,10 +1222,10 @@
                                     
                                     <!-- Shield Shape exactly like the logo -->
                                     <path d="M200 40 L340 90 L340 220 Q340 320 200 420 Q60 320 60 220 L60 90 Z" 
-                                          fill="none" stroke="url(#newShieldGrad)" stroke-width="12"/>
+                                          fill="none" stroke="url(#newShieldGradRu)" stroke-width="12"/>
                                     
                                     <!-- 8 EU Stars positioned exactly like reference image -->
-                                    <g fill="url(#newShieldGrad)">
+                                    <g fill="url(#newShieldGradRu)">
                                         <!-- Top star (12 o'clock) -->
                                         <polygon points="200,165 202,171 208,171 204.5,174.5 206,180.5 200,177 194,180.5 195.5,174.5 192,171 198,171" />
                                         
@@ -1212,7 +1252,7 @@
                                     </g>
                                     
                                     <!-- Central Keyhole (exactly like logo) -->
-                                    <g fill="url(#newShieldGrad)">
+                                    <g fill="url(#newShieldGradRu)">
                                         <circle cx="200" cy="220" r="15" />
                                         <rect x="190" y="230" width="20" height="25" rx="3" />
                                         <circle cx="200" cy="220" r="6" fill="transparent" stroke="#ffffff" stroke-width="2" />
@@ -1232,19 +1272,19 @@
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-number">250+</div>
-                    <div class="stat-label">Enterprise Clients</div>
+                    <div class="stat-label">Корпоративных Клиентов</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">99.9%</div>
-                    <div class="stat-label">Security Uptime</div>
+                    <div class="stat-label">Время Безопасности</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">24/7</div>
-                    <div class="stat-label">SOC Monitoring</div>
+                    <div class="stat-label">SOC Мониторинг</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">€5M+</div>
-                    <div class="stat-label">Cost Savings</div>
+                    <div class="stat-number">€5М+</div>
+                    <div class="stat-label">Экономия Средств</div>
                 </div>
             </div>
         </div>
@@ -1255,38 +1295,38 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <div class="about-badge">About our company</div>
-                    <h2 class="about-title">This Is 24/7 Cyber Security Operation Center For Your Problem Solution.</h2>
+                    <div class="about-badge">О нашей компании</div>
+                    <h2 class="about-title">Это 24/7 Центр Операций Кибербезопасности Для Решения Ваших Проблем.</h2>
                     <p class="about-description">
-                        vCISO-EU is a Virtual Chief Information Security Office designed to help businesses across Europe strengthen their cybersecurity posture without the high costs of a full-time CISO. Our team combines strategic leadership, regulatory expertise, and technical know-how to deliver measurable security outcomes.
+                        vCISO-EU — это Виртуальный Офис Главного Директора по Информационной Безопасности, созданный для помощи предприятиям по всей Европе в укреплении их позиций кибербезопасности без высоких затрат на штатного CISO. Наша команда сочетает стратегическое руководство, экспертизу в области регулирования и технические знания для достижения измеримых результатов безопасности.
                     </p>
                     
                     <div class="about-industries">
-                        <h4>We focus on industries where trust, compliance, and resilience are critical:</h4>
+                        <h4>Мы фокусируемся на отраслях, где доверие, соответствие и устойчивость критически важны:</h4>
                         
                         <div class="industry-item">
-                            <div class="industry-name">Fintech & Banking</div>
-                            <div class="industry-desc">ensuring compliance with DORA, PSD2, GDPR and protecting financial platforms against evolving cyber threats.</div>
+                            <div class="industry-name">Финтех и Банкинг</div>
+                            <div class="industry-desc">обеспечение соответствия DORA, PSD2, GDPR и защита финансовых платформ от развивающихся киберугроз.</div>
                         </div>
                         
                         <div class="industry-item">
-                            <div class="industry-name">Insurance</div>
-                            <div class="industry-desc">securing sensitive customer data and supporting ISO 27001, PCI DSS, and NIS2 compliance for insurers.</div>
+                            <div class="industry-name">Страхование</div>
+                            <div class="industry-desc">защита конфиденциальных данных клиентов и поддержка соответствия ISO 27001, PCI DSS и NIS2 для страховщиков.</div>
                         </div>
                         
                         <div class="industry-item">
-                            <div class="industry-name">E-Commerce & Retail</div>
-                            <div class="industry-desc">building secure environments to protect payment data, reduce fraud risk, and meet PCI DSS requirements.</div>
+                            <div class="industry-name">Электронная Коммерция и Розничная Торговля</div>
+                            <div class="industry-desc">создание безопасных сред для защиты платежных данных, снижения риска мошенничества и соответствия требованиям PCI DSS.</div>
                         </div>
                         
                         <div class="industry-item">
-                            <div class="industry-name">SaaS & Technology Startups</div>
-                            <div class="industry-desc">designing scalable security programs that grow with the business and satisfy investor and client expectations.</div>
+                            <div class="industry-name">SaaS и Технологические Стартапы</div>
+                            <div class="industry-desc">разработка масштабируемых программ безопасности, которые растут вместе с бизнесом и удовлетворяют ожидания инвесторов и клиентов.</div>
                         </div>
                     </div>
                     
                     <div class="about-mission">
-                        <strong>Our mission is simple:</strong> provide trust, reliability, and modern cybersecurity leadership to organizations that want to grow securely in today's digital economy.
+                        <strong>Наша миссия проста:</strong> обеспечить доверие, надежность и современное руководство кибербезопасностью для организаций, которые хотят безопасно расти в сегодняшней цифровой экономике.
                     </div>
                 </div>
                 
@@ -1294,7 +1334,7 @@
                     <div style="position: relative; width: 100%; max-width: 650px; background: none; overflow: visible;">
                         <!-- Cyber Security Image -->
                         <img src="about1.png" 
-                             alt="Cyber Security Protection - Hands holding digital shield with network connections" 
+                             alt="Защита Кибербезопасности - Руки держат цифровой щит с сетевыми соединениями" 
                              style="width: 100%; height: auto; border: none; object-fit: cover; background: transparent; box-shadow: none; border-radius: 0;" />
                     </div>
                 </div>
@@ -1302,12 +1342,13 @@
         </div>
     </section>
 
+
     <!-- Services -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">What We Do For Your Cyber Security Solutions</h2>
+            <h2 class="section-title">Что Мы Делаем Для Вашей Кибербезопасности</h2>
             <p class="section-subtitle">
-                Comprehensive virtual CISO services powered by advanced security frameworks and regulatory expertise
+                Комплексные услуги виртуального CISO на основе передовых фреймворков безопасности и регуляторной экспертизы
             </p>
             
             <div class="services-grid">
@@ -1315,13 +1356,13 @@
                     <div class="service-icon">
                         <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <defs>
-                                <linearGradient id="doraBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <linearGradient id="doraBlueRu" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" style="stop-color:#003399;stop-opacity:1" />
                                     <stop offset="100%" style="stop-color:#0066cc;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
                             <!-- Blue background circle -->
-                            <circle cx="50" cy="50" r="48" fill="url(#doraBlue)" stroke="#ffcc00" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="48" fill="url(#doraBlueRu)" stroke="#ffcc00" stroke-width="2"/>
                             
                             <!-- 12 EU Stars in perfect circle -->
                             <g fill="#ffcc00">
@@ -1355,14 +1396,14 @@
                             <text x="50" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffcc00">DORA</text>
                         </svg>
                     </div>
-                    <div class="compliance-tag">EU Regulation</div>
-                    <h3>DORA Compliance</h3>
-                    <p>Complete Digital Operational Resilience Act implementation for financial institutions with advanced ICT risk management.</p>
+                    <div class="compliance-tag">Регулирование ЕС</div>
+                    <h3>Соответствие DORA</h3>
+                    <p>Полная реализация Закона о Цифровой Операционной Устойчивости для финансовых институтов с продвинутым управлением ИКТ рисками.</p>
                     <ul class="service-features">
-                        <li>ICT governance framework</li>
-                        <li>Operational resilience testing</li>
-                        <li>Incident response automation</li>
-                        <li>Third-party risk management</li>
+                        <li>Фреймворк управления ИКТ</li>
+                        <li>Тестирование операционной устойчивости</li>
+                        <li>Автоматизация реагирования на инциденты</li>
+                        <li>Управление рисками третьих сторон</li>
                     </ul>
                 </div>
 
@@ -1370,13 +1411,13 @@
                     <div class="service-icon">
                         <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <defs>
-                                <linearGradient id="isoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <linearGradient id="isoGradientRu" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" style="stop-color:#0066cc;stop-opacity:1" />
                                     <stop offset="100%" style="stop-color:#003399;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
                             <!-- ISO background -->
-                            <rect x="5" y="5" width="90" height="90" rx="10" fill="url(#isoGradient)" stroke="#ffffff" stroke-width="2"/>
+                            <rect x="5" y="5" width="90" height="90" rx="10" fill="url(#isoGradientRu)" stroke="#ffffff" stroke-width="2"/>
                             
                             <!-- ISO text -->
                             <text x="50" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">ISO</text>
@@ -1388,14 +1429,14 @@
                             <rect x="48" y="73" width="4" height="6" fill="#0066cc"/>
                         </svg>
                     </div>
-                    <div class="compliance-tag">ISO Certification</div>
-                    <h3>ISO 27001 Management</h3>
-                    <p>End-to-end Information Security Management System implementation with certification support and continuous monitoring.</p>
+                    <div class="compliance-tag">Сертификация ISO</div>
+                    <h3>Управление ISO 27001</h3>
+                    <p>Комплексная реализация Системы Управления Информационной Безопасностью с поддержкой сертификации и непрерывным мониторингом.</p>
                     <ul class="service-features">
-                        <li>ISMS design and implementation</li>
-                        <li>Risk assessment protocols</li>
-                        <li>Security controls deployment</li>
-                        <li>Audit preparation and management</li>
+                        <li>Проектирование и внедрение СУИБ</li>
+                        <li>Протоколы оценки рисков</li>
+                        <li>Развертывание контролей безопасности</li>
+                        <li>Подготовка и управление аудитом</li>
                     </ul>
                 </div>
 
@@ -1403,13 +1444,13 @@
                     <div class="service-icon">
                         <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <defs>
-                                <linearGradient id="pciGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <linearGradient id="pciGradientRu" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" style="stop-color:#cc0000;stop-opacity:1" />
                                     <stop offset="100%" style="stop-color:#990000;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
                             <!-- PCI background -->
-                            <rect x="5" y="5" width="90" height="90" rx="15" fill="url(#pciGradient)" stroke="#ffffff" stroke-width="2"/>
+                            <rect x="5" y="5" width="90" height="90" rx="15" fill="url(#pciGradientRu)" stroke="#ffffff" stroke-width="2"/>
                             
                             <!-- PCI text -->
                             <text x="50" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">PCI</text>
@@ -1428,14 +1469,14 @@
                             <circle cx="70" cy="75" r="1.5" fill="#ffffff"/>
                         </svg>
                     </div>
-                    <div class="compliance-tag">Payment Security</div>
-                    <h3>PCI DSS Protection</h3>
-                    <p>Advanced payment card industry compliance with automated monitoring and quarterly assessment management.</p>
+                    <div class="compliance-tag">Безопасность Платежей</div>
+                    <h3>Защита PCI DSS</h3>
+                    <p>Продвинутое соответствие стандартам индустрии платежных карт с автоматизированным мониторингом и управлением квартальными оценками.</p>
                     <ul class="service-features">
-                        <li>CDE segmentation and protection</li>
-                        <li>Vulnerability scanning automation</li>
-                        <li>Penetration testing coordination</li>
-                        <li>Compliance reporting and validation</li>
+                        <li>Сегментация и защита CDE</li>
+                        <li>Автоматизация сканирования уязвимостей</li>
+                        <li>Координация тестирования на проникновение</li>
+                        <li>Отчетность и валидация соответствия</li>
                     </ul>
                 </div>
 
@@ -1443,13 +1484,13 @@
                     <div class="service-icon">
                         <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <defs>
-                                <linearGradient id="gdprGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <linearGradient id="gdprGradientRu" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" style="stop-color:#003399;stop-opacity:1" />
                                     <stop offset="100%" style="stop-color:#0066cc;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
                             <!-- GDPR background (EU blue) -->
-                            <rect x="5" y="5" width="90" height="90" rx="10" fill="url(#gdprGradient)" stroke="#ffcc00" stroke-width="2"/>
+                            <rect x="5" y="5" width="90" height="90" rx="10" fill="url(#gdprGradientRu)" stroke="#ffcc00" stroke-width="2"/>
                             
                             <!-- GDPR text -->
                             <text x="50" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffcc00">GDPR</text>
@@ -1468,40 +1509,40 @@
                             <circle cx="50" cy="52" r="1.5" fill="#ffcc00"/>
                         </svg>
                     </div>
-                    <div class="compliance-tag">Data Protection</div>
-                    <h3>GDPR Privacy Shield</h3>
-                    <p>Comprehensive data protection governance with privacy by design implementation and breach response automation.</p>
+                    <div class="compliance-tag">Защита Данных</div>
+                    <h3>Щит Приватности GDPR</h3>
+                    <p>Комплексное управление защитой данных с реализацией приватности по дизайну и автоматизацией реагирования на нарушения.</p>
                     <ul class="service-features">
-                        <li>Data Protection Impact Assessments</li>
-                        <li>Privacy by design architecture</li>
-                        <li>Automated breach detection</li>
-                        <li>Regulatory liaison and reporting</li>
+                        <li>Оценка влияния на защиту данных</li>
+                        <li>Архитектура приватности по дизайну</li>
+                        <li>Автоматическое обнаружение нарушений</li>
+                        <li>Регуляторная связь и отчетность</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">🚨</div>
-                    <div class="compliance-tag">24/7 Operations</div>
-                    <h3>Advanced SOC Services</h3>
-                    <p>Enterprise Security Operations Center with AI-powered threat detection and automated incident response capabilities.</p>
+                    <div class="compliance-tag">24/7 Операции</div>
+                    <h3>Продвинутые SOC Услуги</h3>
+                    <p>Центр Операций Безопасности предприятия с обнаружением угроз на базе ИИ и автоматизированными возможностями реагирования на инциденты.</p>
                     <ul class="service-features">
-                        <li>Real-time threat monitoring</li>
-                        <li>AI-powered threat hunting</li>
-                        <li>Automated incident response</li>
-                        <li>Digital forensics and analysis</li>
+                        <li>Мониторинг угроз в реальном времени</li>
+                        <li>Охота на угрозы с помощью ИИ</li>
+                        <li>Автоматизированное реагирование на инциденты</li>
+                        <li>Цифровая криминалистика и анализ</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">⚡</div>
-                    <div class="compliance-tag">Strategic Advisory</div>
-                    <h3>Executive Security Leadership</h3>
-                    <p>C-level cybersecurity strategy and governance with board-ready reporting and risk management frameworks.</p>
+                    <div class="compliance-tag">Стратегический Консалтинг</div>
+                    <h3>Исполнительное Руководство Безопасностью</h3>
+                    <p>Стратегия кибербезопасности C-уровня и управление с отчетностью для совета директоров и фреймворками управления рисками.</p>
                     <ul class="service-features">
-                        <li>Strategic security planning</li>
-                        <li>Board-level risk reporting</li>
-                        <li>Security architecture design</li>
-                        <li>Executive security training</li>
+                        <li>Стратегическое планирование безопасности</li>
+                        <li>Отчетность по рискам для совета директоров</li>
+                        <li>Проектирование архитектуры безопасности</li>
+                        <li>Обучение исполнительного руководства</li>
                     </ul>
                 </div>
             </div>
@@ -1511,100 +1552,100 @@
     <!-- Pricing -->
     <section id="pricing" class="pricing">
         <div class="container">
-            <h2 class="section-title">Our Best Pricing Plan For Your Solution</h2>
+            <h2 class="section-title">Наши Лучшие Тарифы Для Ваших Решений</h2>
             <p class="section-subtitle">
-                Flexible pricing models designed for enterprise cybersecurity leadership requirements
+                Гибкие модели ценообразования, разработанные для требований корпоративного руководства кибербезопасностью
             </p>
             
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <div class="plan-name">Executive</div>
-                    <div class="plan-price">€5K</div>
-                    <div class="plan-period">/month</div>
+                    <div class="plan-name">Исполнительный</div>
+                    <div class="plan-price">€5К</div>
+                    <div class="plan-period">/месяц</div>
                     <ul class="plan-features">
-                        <li>Strategic cybersecurity oversight</li>
-                        <li>Quarterly compliance reviews</li>
-                        <li>Executive risk reporting</li>
-                        <li>Policy framework development</li>
-                        <li>Vendor risk assessments</li>
-                        <li>Monthly strategy sessions</li>
+                        <li>Стратегический надзор за кибербезопасностью</li>
+                        <li>Квартальные обзоры соответствия</li>
+                        <li>Отчетность по исполнительным рискам</li>
+                        <li>Разработка политической структуры</li>
+                        <li>Оценки рисков поставщиков</li>
+                        <li>Ежемесячные стратегические сессии</li>
                     </ul>
-                    <a href="#contact" class="btn-primary">Get Started</a>
+                    <a href="#contact" class="btn-primary">Начать</a>
                 </div>
 
                 <div class="pricing-card popular">
-                    <div class="plan-name">Enterprise</div>
-                    <div class="plan-price">€12K</div>
-                    <div class="plan-period">/month</div>
+                    <div class="plan-name">Корпоративный</div>
+                    <div class="plan-price">€12К</div>
+                    <div class="plan-period">/месяц</div>
                     <ul class="plan-features">
-                        <li>Full virtual CISO team</li>
-                        <li>24/7 SOC monitoring</li>
-                        <li>DORA/ISO implementation</li>
-                        <li>Advanced threat hunting</li>
-                        <li>Incident response automation</li>
-                        <li>Board-level governance</li>
-                        <li>Continuous compliance</li>
+                        <li>Полная команда виртуального CISO</li>
+                        <li>24/7 SOC мониторинг</li>
+                        <li>Реализация DORA/ISO</li>
+                        <li>Продвинутая охота на угрозы</li>
+                        <li>Автоматизация реагирования на инциденты</li>
+                        <li>Управление на уровне совета директоров</li>
+                        <li>Непрерывное соответствие</li>
                     </ul>
-                    <a href="#contact" class="btn-primary">Most Popular</a>
+                    <a href="#contact" class="btn-primary">Самый Популярный</a>
                 </div>
 
                 <div class="pricing-card">
-                    <div class="plan-name">Premium</div>
-                    <div class="plan-price">€25K+</div>
-                    <div class="plan-period">/month</div>
+                    <div class="plan-name">Премиум</div>
+                    <div class="plan-price">€25К+</div>
+                    <div class="plan-period">/месяц</div>
                     <ul class="plan-features">
-                        <li>Complete CISO office</li>
-                        <li>Multi-framework compliance</li>
-                        <li>Custom security architecture</li>
+                        <li>Полный офис CISO</li>
+                        <li>Соответствие мульти-фреймворков</li>
+                        <li>Кастомная архитектура безопасности</li>
                         <li>M&A due diligence</li>
-                        <li>Global regulatory coordination</li>
-                        <li>White-glove support</li>
-                        <li>Dedicated success manager</li>
+                        <li>Глобальная регуляторная координация</li>
+                        <li>Белоперчаточная поддержка</li>
+                        <li>Выделенный менеджер успеха</li>
                     </ul>
-                    <a href="#contact" class="btn-primary">Contact Sales</a>
+                    <a href="#contact" class="btn-primary">Связаться с Продажами</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Team Section -->
+    <!-- Наша Команда -->
     <section class="team-section">
         <div class="container">
             <div class="team-content">
                 <div class="team-text">
-                    <div class="team-badge">Our team member</div>
-                    <h2 class="team-title">Our Expert's Team Member For Your Solution</h2>
+                    <div class="team-badge">Наша команда</div>
+                    <h2 class="team-title">Наша Экспертная Команда Для Ваших Решений</h2>
                     <p class="team-description">
-                        At vCISO-EU, our strength lies in a dedicated team of cybersecurity and compliance professionals. Each member brings deep expertise in DORA, ISO 27001, PCI DSS, and CIS Controls, ensuring our clients receive both strategic guidance and practical solutions.
+                        В vCISO-EU наша сила заключается в преданной команде профессионалов кибербезопасности и соответствия требованиям. Каждый участник обладает глубокой экспертизой в DORA, ISO 27001, PCI DSS и CIS Controls, обеспечивая нашим клиентам как стратегическое руководство, так и практические решения.
                     </p>
                     <p class="team-description">
-                        We work as a Virtual Security Office, combining leadership, risk management, and hands-on technical knowledge to protect businesses across Europe. Our focus is on fintech, insurance, SaaS, and e-commerce, where trust and resilience are essential.
+                        Мы работаем как Виртуальный Офис Безопасности, объединяя лидерство, управление рисками и практические технические знания для защиты бизнеса по всей Европе. Наш фокус на финтех, страховании, SaaS и электронной коммерции, где доверие и устойчивость имеют решающее значение.
                     </p>
                     <p class="team-description">
-                        Together, we provide clients with the confidence that their security is managed by a team — not just a single consultant.
+                        Вместе мы даем клиентам уверенность в том, что их безопасность управляется командой — а не только одним консультантом.
                     </p>
-                    <a href="#contact" class="view-all-btn">VIEW ALL MEMBERS</a>
+                    <a href="#contact" class="view-all-btn">ПОСМОТРЕТЬ ВСЕХ УЧАСТНИКОВ</a>
                 </div>
                 
                 <div class="team-grid">
                     <div class="team-member">
-                        <img src="1.png" alt="Security Specialist">
-                        <div class="team-member-role">Security Specialist</div>
+                        <img src="1.png" alt="Специалист по безопасности">
+                        <div class="team-member-role">Специалист по безопасности</div>
                     </div>
                     
                     <div class="team-member">
-                        <img src="2.png" alt="Security Specialist">
-                        <div class="team-member-role">Security Specialist</div>
+                        <img src="2.png" alt="Специалист по безопасности">
+                        <div class="team-member-role">Специалист по безопасности</div>
                     </div>
                     
                     <div class="team-member">
-                        <img src="3.jpeg" alt="Security Specialist">
-                        <div class="team-member-role">Security Specialist</div>
+                        <img src="3.jpeg" alt="Специалист по безопасности">
+                        <div class="team-member-role">Специалист по безопасности</div>
                     </div>
                     
                     <div class="team-member">
-                        <img src="5.jpg" alt="Security Specialist">
-                        <div class="team-member-role">Security Specialist</div>
+                        <img src="5.jpg" alt="Специалист по безопасности">
+                        <div class="team-member-role">Специалист по безопасности</div>
                     </div>
                 </div>
             </div>
@@ -1615,74 +1656,74 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact-content">
-                <h2 class="section-title">Ready To Secure Your Enterprise?</h2>
+                <h2 class="section-title">Готовы Защитить Ваше Предприятие?</h2>
                 <p class="section-subtitle">
-                    Get advanced cybersecurity leadership and start your compliance journey today
+                    Получите продвинутое руководство кибербезопасностью и начните ваш путь соответствия сегодня
                 </p>
                 
                 <div class="contact-form">
                     <form>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="company">Company Name *</label>
+                                <label for="company">Название Компании *</label>
                                 <input type="text" id="company" name="company" required>
                             </div>
                             <div class="form-group">
-                                <label for="name">Your Name *</label>
+                                <label for="name">Ваше Имя *</label>
                                 <input type="text" id="name" name="name" required>
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="email">Email Address *</label>
+                                <label for="email">Email Адрес *</label>
                                 <input type="email" id="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="phone">Phone Number</label>
+                                <label for="phone">Номер Телефона</label>
                                 <input type="tel" id="phone" name="phone">
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="industry">Industry</label>
+                                <label for="industry">Отрасль</label>
                                 <select id="industry" name="industry">
-                                    <option value="">Select Industry</option>
-                                    <option value="fintech">FinTech & Banking</option>
-                                    <option value="saas">SaaS & Technology</option>
-                                    <option value="healthcare">Healthcare</option>
-                                    <option value="ecommerce">E-commerce</option>
-                                    <option value="manufacturing">Manufacturing</option>
-                                    <option value="other">Other</option>
+                                    <option value="">Выберите отрасль</option>
+                                    <option value="fintech">ФинТех и Банковское дело</option>
+                                    <option value="saas">SaaS и Технологии</option>
+                                    <option value="healthcare">Здравоохранение</option>
+                                    <option value="ecommerce">Электронная коммерция</option>
+                                    <option value="manufacturing">Производство</option>
+                                    <option value="other">Другое</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="compliance">Primary Need</label>
+                                <label for="compliance">Основная Потребность</label>
                                 <select id="compliance" name="compliance">
-                                    <option value="">Select Compliance Need</option>
-                                    <option value="dora">DORA Compliance</option>
+                                    <option value="">Выберите потребность в соответствии</option>
+                                    <option value="dora">Соответствие DORA</option>
                                     <option value="iso27001">ISO 27001</option>
                                     <option value="pci">PCI DSS</option>
                                     <option value="gdpr">GDPR</option>
                                     <option value="soc">24/7 SOC</option>
-                                    <option value="strategy">Security Strategy</option>
+                                    <option value="strategy">Стратегия Безопасности</option>
                                 </select>
                             </div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Project Requirements</label>
-                            <textarea id="message" name="message" placeholder="Describe your cybersecurity challenges and timeline..."></textarea>
+                            <label for="message">Требования Проекта</label>
+                            <textarea id="message" name="message" placeholder="Опишите ваши вызовы кибербезопасности и временные рамки..."></textarea>
                         </div>
                         
-                        <button type="submit" class="submit-btn">Get Free Consultation</button>
+                        <button type="submit" class="submit-btn">Получить Бесплатную Консультацию</button>
                     </form>
                 </div>
                 
                 <div style="margin-top: 3rem; color: #a0aec0;">
                     <p>🔒 secure@vciso-eu.com | 📞 +32 (0) 2 800 9000</p>
-                    <p>🏢 Brussels Cyber District | Protecting Europe's Digital Future</p>
+                    <p>🏢 Киберрайон Брюсселя | Защищаем Цифровое Будущее Европы</p>
                 </div>
             </div>
         </div>
@@ -1691,8 +1732,8 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 vCISO-EU. Advanced Virtual CISO Services for Europe.</p>
-            <p>Cybersecurity Leadership | DORA, ISO 27001, PCI DSS, GDPR | 24/7 SOC Operations</p>
+            <p>&copy; 2024 vCISO-EU. Продвинутые Услуги Виртуального CISO для Европы.</p>
+            <p>Руководство Кибербезопасностью | DORA, ISO 27001, PCI DSS, GDPR | 24/7 SOC Операции</p>
         </div>
     </footer>
 
@@ -1720,7 +1761,7 @@
         // Form submission
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('🚀 Thank you! Our cybersecurity experts will contact you within 24 hours to discuss your enterprise security requirements.');
+            alert('🚀 Спасибо! Наши эксперты по кибербезопасности свяжутся с вами в течение 24 часов для обсуждения ваших корпоративных требований безопасности.');
         });
 
         // Dynamic particles
